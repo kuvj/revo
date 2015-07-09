@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 08, 2015 at 11:14 PM
+-- Generation Time: Jul 09, 2015 at 10:35 PM
 -- Server version: 5.5.41-log
 -- PHP Version: 5.3.29
 
@@ -760,7 +760,14 @@ CREATE TABLE IF NOT EXISTS `modx_categories` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `category` (`parent`,`category`),
   KEY `parent` (`parent`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `modx_categories`
+--
+
+INSERT INTO `modx_categories` (`id`, `parent`, `category`) VALUES
+(1, 0, 'Базовые штуки');
 
 -- --------------------------------------------------------
 
@@ -774,6 +781,14 @@ CREATE TABLE IF NOT EXISTS `modx_categories_closure` (
   `depth` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`ancestor`,`descendant`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `modx_categories_closure`
+--
+
+INSERT INTO `modx_categories_closure` (`ancestor`, `descendant`, `depth`) VALUES
+(1, 1, 0),
+(0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1136,7 +1151,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `classKey` varchar(100) NOT NULL DEFAULT '',
   `item` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 --
 -- Dumping data for table `modx_manager_log`
@@ -1154,7 +1169,29 @@ INSERT INTO `modx_manager_log` (`id`, `user`, `occurred`, `action`, `classKey`, 
 (9, 1, '2015-07-08 22:34:05', 'template_update', 'modTemplate', '1'),
 (10, 1, '2015-07-08 22:36:38', 'template_update', 'modTemplate', '1'),
 (11, 1, '2015-07-08 22:36:49', 'template_update', 'modTemplate', '1'),
-(12, 1, '2015-07-08 22:36:53', 'template_update', 'modTemplate', '1');
+(12, 1, '2015-07-08 22:36:53', 'template_update', 'modTemplate', '1'),
+(13, 1, '2015-07-09 21:38:27', 'template_update', 'modTemplate', '1'),
+(14, 1, '2015-07-09 21:39:26', 'chunk_create', 'modChunk', '1'),
+(15, 1, '2015-07-09 21:39:47', 'category_create', 'modCategory', '1'),
+(16, 1, '2015-07-09 21:39:53', 'chunk_update', 'modChunk', '1'),
+(17, 1, '2015-07-09 21:40:18', 'template_update', 'modTemplate', '1'),
+(18, 1, '2015-07-09 21:41:14', 'chunk_create', 'modChunk', '2'),
+(19, 1, '2015-07-09 21:41:35', 'template_update', 'modTemplate', '1'),
+(20, 1, '2015-07-09 21:50:19', 'template_update', 'modTemplate', '1'),
+(21, 1, '2015-07-09 21:52:03', 'chunk_update', 'modChunk', '1'),
+(22, 1, '2015-07-09 21:52:18', 'chunk_update', 'modChunk', '1'),
+(23, 1, '2015-07-09 21:52:32', 'chunk_update', 'modChunk', '2'),
+(24, 1, '2015-07-09 21:58:25', 'chunk_update', 'modChunk', '1'),
+(25, 1, '2015-07-09 21:58:33', 'chunk_update', 'modChunk', '2'),
+(26, 1, '2015-07-09 21:59:37', 'resource_update', 'modResource', '1'),
+(27, 1, '2015-07-09 22:04:11', 'template_update', 'modTemplate', '1'),
+(28, 1, '2015-07-09 22:04:18', 'chunk_update', 'modChunk', '1'),
+(29, 1, '2015-07-09 22:10:59', 'template_update', 'modTemplate', '1'),
+(30, 1, '2015-07-09 22:12:18', 'template_update', 'modTemplate', '1'),
+(31, 1, '2015-07-09 22:12:25', 'template_update', 'modTemplate', '1'),
+(32, 1, '2015-07-09 22:15:43', 'chunk_update', 'modChunk', '1'),
+(33, 1, '2015-07-09 22:21:33', 'template_update', 'modTemplate', '1'),
+(34, 1, '2015-07-09 22:22:03', 'chunk_update', 'modChunk', '1');
 
 -- --------------------------------------------------------
 
@@ -1457,7 +1494,8 @@ CREATE TABLE IF NOT EXISTS `modx_session` (
 --
 
 INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES
-('mk020egm1rejkae4vt0rvsgnc4', 1436380177, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx559c2a8c9f81f5.35403554_1559c2aa42124b1.14543399";modx.mgr.session.cookie.lifetime|i:604800;modx.mgr.user.config|a:0:{}modx.user.1.userGroups|a:1:{i:0;i:1;}newResourceTokens|a:6:{i:0;s:23:"559c2e689ab734.08811715";i:1;s:23:"559c34ddacc251.03520716";i:2;s:23:"559c34e96b7af6.81074957";i:3;s:23:"559c3667543a38.89045044";i:4;s:23:"559c367cf09a18.88314185";i:5;s:23:"559d6c11038a74.49523921";}');
+('mk020egm1rejkae4vt0rvsgnc4', 1436468325, 'modx.user.contextTokens|a:1:{s:3:"mgr";i:1;}modx.mgr.user.token|s:52:"modx559c2a8c9f81f5.35403554_1559c2aa42124b1.14543399";modx.mgr.session.cookie.lifetime|i:604800;modx.mgr.user.config|a:0:{}modx.user.1.userGroups|a:1:{i:0;i:1;}newResourceTokens|a:7:{i:0;s:23:"559c2e689ab734.08811715";i:1;s:23:"559c34ddacc251.03520716";i:2;s:23:"559c34e96b7af6.81074957";i:3;s:23:"559c3667543a38.89045044";i:4;s:23:"559c367cf09a18.88314185";i:5;s:23:"559d6c11038a74.49523921";i:6;s:23:"559ec465024a56.68461942";}'),
+('07dpmp7pidaegdkud2nbp0m3m0', 1436464854, 'modx.user.contextTokens|a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -1536,7 +1574,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_content` (
 --
 
 INSERT INTO `modx_site_content` (`id`, `type`, `contentType`, `pagetitle`, `longtitle`, `description`, `alias`, `link_attributes`, `published`, `pub_date`, `unpub_date`, `parent`, `isfolder`, `introtext`, `content`, `richtext`, `template`, `menuindex`, `searchable`, `cacheable`, `createdby`, `createdon`, `editedby`, `editedon`, `deleted`, `deletedon`, `deletedby`, `publishedon`, `publishedby`, `menutitle`, `donthit`, `privateweb`, `privatemgr`, `content_dispo`, `hidemenu`, `class_key`, `context_key`, `content_type`, `uri`, `uri_override`, `hide_children_in_tree`, `show_in_tree`, `properties`) VALUES
-(1, 'document', 'text/html', 'Главная', '', '', 'index', '', 1, 0, 0, 0, 0, '', '<p>Hello world</p>', 1, 1, 0, 1, 1, 1, 1436297871, 1, 1436300918, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, '', 0, 0, 1, NULL);
+(1, 'document', 'text/html', 'Главная', '', '', 'index', '', 1, 0, 0, 0, 0, '', '<p>Hello world</p>\r\n<p><button class="btn btn-wrong">Click</button></p>', 1, 1, 0, 1, 1, 1, 1436297871, 1, 1436468377, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 'modDocument', 'web', 1, '', 0, 0, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -1563,7 +1601,15 @@ CREATE TABLE IF NOT EXISTS `modx_site_htmlsnippets` (
   KEY `category` (`category`),
   KEY `locked` (`locked`),
   KEY `static` (`static`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `modx_site_htmlsnippets`
+--
+
+INSERT INTO `modx_site_htmlsnippets` (`id`, `source`, `property_preprocess`, `name`, `description`, `editor_type`, `category`, `cache_type`, `snippet`, `locked`, `properties`, `static`, `static_file`) VALUES
+(1, 1, 0, 'css', 'Подключаем css', 0, 1, 0, '<!-- normalize.css -->\n<link rel="stylesheet" href="/assets/app/base/css/normalize.css">\n<!-- Latest compiled and minified CSS -->\n<link rel="stylesheet" href="/assets/app/base/bootstrap/css/bootstrap.min.css">\n<!-- Optional theme -->\n<link rel="stylesheet" href="/assets/app/base/bootstrap/css/bootstrap-theme.min.css">\n<!-- CSS -->\n<link rel="stylesheet" href="/assets/dist/bundle.min.css">\n\n<!-- jQuery --> \n<script src="/assets/app/base/js/jquery-2.1.4.min.js"></script>\n\n<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->\n<!-- WARNING: Respond.js doesn''t work if you view the page via file:// -->\n    <!--[if lt IE 9]>\n      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>\n      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>\n    <![endif]-->', 0, 'a:0:{}', 0, ''),
+(2, 1, 0, 'js', 'подключаем js', 0, 1, 0, '<!-- Latest compiled and minified JavaScript -->\n<script src="/assets/app/base/bootstrap/js/bootstrap.min.js"></script>\n<!-- JS -->\n<script src="/assets/dist/bundle.all.js"></script>', 0, 'a:0:{}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -1696,7 +1742,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_templates` (
 --
 
 INSERT INTO `modx_site_templates` (`id`, `source`, `property_preprocess`, `templatename`, `description`, `editor_type`, `category`, `icon`, `template_type`, `content`, `locked`, `properties`, `static`, `static_file`) VALUES
-(1, 0, 0, 'Начальный шаблон', 'Template', 0, 0, '', 0, '<html>\n<head>\n<title>[[++site_name]] - [[*pagetitle]]</title>\n<base href="[[++site_url]]" />\n<link rel="stylesheet" href="/assets/dist/bundle.min.css">\n</head>\n<body>\n[[*content]]\n<script src="/assets/dist/bundle.all.js"></script>\n</body>\n</html>', 0, 'a:0:{}', 0, '');
+(1, 0, 0, 'Базовый шаблон', 'Пустой базовый шаблон', 0, 1, '', 0, '<!DOCTYPE html>\n<html lang="en">\n  <head>\n  	<base href="[[++site_url]]" />\n    <meta charset="utf-8">\n    <meta http-equiv="X-UA-Compatible" content="IE=edge">\n    <meta name="viewport" content="width=device-width, initial-scale=1">\n\n    <title>[[++site_name]] - [[*pagetitle]]</title>\n\n	<!-- include CSS -->\n    [[$css]]\n  </head>\n  <body>\n    [[*content]]\n	\n	<!-- include JS -->\n    [[$js]]\n  </body>\n</html>', 0, 'a:0:{}', 0, '');
 
 -- --------------------------------------------------------
 
